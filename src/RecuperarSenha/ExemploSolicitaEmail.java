@@ -1,12 +1,12 @@
-package seguranca_informacao.senhas;
+package RecuperarSenha;
 
-import seguranca_informacao.senhas.RecuperarSenha;
+import RecuperarSenha.RecuperarSenha;
 
 /**
  *
  * @author gabrieli
  */
-public class SolicitaEmail {
+public class ExemploSolicitaEmail {
     
     public static void main (String args[]){
         try{
