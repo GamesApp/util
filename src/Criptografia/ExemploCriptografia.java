@@ -6,7 +6,8 @@ import java.text.Normalizer;
 public class ExemploCriptografia {
     
     public static void main(String[] args) {
-       
+       CodCifraDeVigenere criptografar = new CodCifraDeVigenere("#_Efhj");
+            System.out.println(criptografar.cifrar());
  }
     
     public String GeraCriptografia(String senha, int cod){

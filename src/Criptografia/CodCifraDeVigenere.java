@@ -11,9 +11,8 @@ public class CodCifraDeVigenere {
     
     char[] mensagem;
     char[] chave;
-    char[] resultado;
     char [][] matriz;
-    String chaveFixa="papainoel";
+    String chaveFixa="ifsul";
 
     //construtor
     public CodCifraDeVigenere(String msg) {
@@ -29,7 +28,9 @@ public class CodCifraDeVigenere {
             if (cont == chaveArray.length) {
                 cont = 0;
              }
+            
         }
+        System.out.println("Antes de gerar a matriz");
 
        GerarMatriz gerar = new GerarMatriz();
        this.matriz = gerar.gerarMatriz();
@@ -53,17 +54,16 @@ public class CodCifraDeVigenere {
             y = (int) this.chave[cont] - 32;
             cifrado[cont] = this.matriz[x][y];
          }
-        this.resultado = cifrado;
 
         for (int i = 0; i < cifrado.length; i++) {
          retorno += cifrado[i];
         }
 
-       /* for(int k = 0;k<96;k++){  MOSTRA MATRIZ
+       /*for(int k = 0;k<96;k++){ // MOSTRA MATRIZ
             System.out.println(this.matriz[k]);
         }*/
-
-        return retorno;
+        String senhaAlfa= new Alfanumerico().codifica(retorno);
+        return senhaAlfa;
     }
 
     public String decifrar() {
@@ -98,10 +98,8 @@ public class CodCifraDeVigenere {
          retorno += decifrado[i];
          }
 
-        this.resultado = decifrado;
-        return retorno;
+        String senhaAlfa= new Alfanumerico().decodifica(retorno);
+        return senhaAlfa;
 
     }
-    
-    
 }
