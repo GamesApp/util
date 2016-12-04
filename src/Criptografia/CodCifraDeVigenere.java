@@ -15,14 +15,14 @@ public class CodCifraDeVigenere {
     String chaveFixa="ifsul";
 
     //construtor
-    public CodCifraDeVigenere(String msg) {
-        msg = RetiraAcento(msg);
-        this.mensagem = msg.toCharArray(); //converte a msg para um array
+    public CodCifraDeVigenere(String senha) {
+        senha = RetiraAcento(senha);
+        this.mensagem = senha.toCharArray(); //converte a msg para um array
         char[] chaveArray = chaveFixa.toCharArray(); //converte a chave para um array
-        this.chave = new char[msg.length()];
+        this.chave = new char[senha.length()];
         int cont = 0;
 
-       for (int i = 0; i < msg.length(); i++) {
+       for (int i = 0; i < senha.length(); i++) {
            this.chave[i] = chaveArray[cont];
            cont++;
             if (cont == chaveArray.length) {
