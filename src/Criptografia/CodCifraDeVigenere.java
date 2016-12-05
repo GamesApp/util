@@ -62,7 +62,9 @@ public class CodCifraDeVigenere {
        /*for(int k = 0;k<96;k++){ // MOSTRA MATRIZ
             System.out.println(this.matriz[k]);
         }*/
+        
         String senhaAlfa= new Alfanumerico().codifica(retorno);
+        System.out.println("Vigenere: "+retorno);
         return senhaAlfa;
     }
 
