@@ -17,7 +17,6 @@ public class GerarMatriz {
         char abcTemp[] = g.gerarAlfabeto();
         char abc[] = new char[abcTemp.length * 2];
 
-        System.out.println(" na matriz");
        for (int c = 0; c < 96; c++) {
            abc[c] = abcTemp[c];
            abc[c + 96] = abcTemp[c];

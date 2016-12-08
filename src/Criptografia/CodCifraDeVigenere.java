@@ -13,10 +13,11 @@ public class CodCifraDeVigenere {
     char[] chave;
     char [][] matriz;
     String chaveFixa="ifsul";
+    String senha;
 
     //construtor
     public CodCifraDeVigenere(String senha) {
-        senha = RetiraAcento(senha);
+        this.senha = RetiraAcento(senha);
         this.mensagem = senha.toCharArray(); //converte a msg para um array
         char[] chaveArray = chaveFixa.toCharArray(); //converte a chave para um array
         this.chave = new char[senha.length()];
@@ -30,7 +31,6 @@ public class CodCifraDeVigenere {
              }
             
         }
-        System.out.println("Antes de gerar a matriz");
 
        GerarMatriz gerar = new GerarMatriz();
        this.matriz = gerar.gerarMatriz();
@@ -44,6 +44,7 @@ public class CodCifraDeVigenere {
      }
 
     public String cifrar() {
+       
 
         char[] cifrado = new char[mensagem.length];
         String retorno = "";
@@ -64,11 +65,12 @@ public class CodCifraDeVigenere {
         }*/
         
         String senhaAlfa= new Alfanumerico().codifica(retorno);
-        System.out.println("Vigenere: "+retorno);
         return senhaAlfa;
     }
 
     public String decifrar() {
+        String senhaSemAlfa= new Alfanumerico().decodifica(senha);
+        this.mensagem = senhaSemAlfa.toCharArray();
         
         char[] decifrado = new char[mensagem.length];
         String retorno = "";
@@ -100,8 +102,7 @@ public class CodCifraDeVigenere {
          retorno += decifrado[i];
          }
 
-        String senhaAlfa= new Alfanumerico().decodifica(retorno);
-        return senhaAlfa;
+        return retorno;
 
     }
 }
